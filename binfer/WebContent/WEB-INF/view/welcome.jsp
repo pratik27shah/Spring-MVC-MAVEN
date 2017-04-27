@@ -104,9 +104,9 @@ name="clock" codebase="."/>-->
 
 
 
-<form action="update" method="get" style="position:relative;left:18%">
+<form action="update" method="post" style="position:relative;left:18%">
 <input type="text" name="files"  style="width:40%" class=" required form-control" placeholder="Enter File path" id="openfilelog">
-<input type="submit" onclick="storefile()" class="databutton"  value="Click to Store File"></input>
+<input type="submit"  class="databutton"  value="Click to Store File"></input>
 </form>
 <label style="color:red">
 ${status}</label>
@@ -114,3 +114,25 @@ ${status}</label>
 Click to View->:
 <a href='${url}'>
 ${url}</a>
+
+
+<script>
+function storefile()
+{
+	try{
+	alert();
+	$.ajax({
+		type:"post",
+		url:"/binfer/update?files=abcdef",
+	//	data:"",
+		success:function(message)
+		{
+			alert(message);
+			
+		}
+	});
+	
+	}
+catch(ex){alert(ex);}
+}
+</script>

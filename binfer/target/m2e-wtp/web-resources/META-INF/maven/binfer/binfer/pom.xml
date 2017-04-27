@@ -3,7 +3,6 @@
   <groupId>binfer</groupId>
   <artifactId>binfer</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <build>
 
   
@@ -73,4 +72,5 @@
 </dependency>
 </dependencies>
   
+    <packaging>war</packaging>
 </project>
