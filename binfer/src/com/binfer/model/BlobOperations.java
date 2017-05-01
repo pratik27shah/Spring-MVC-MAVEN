@@ -17,8 +17,7 @@ import org.jclouds.blobstore.domain.Blob;
 import org.jclouds.filesystem.reference.FilesystemConstants;
 import org.jclouds.openstack.swift.v1.features.ObjectApi;
 import org.jclouds.rackspace.cloudfiles.v1.CloudFilesApi;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.binfer.controller.Cloud;
@@ -32,11 +31,12 @@ import com.google.common.io.Files;
  */
 public class BlobOperations {
 
-	private static final Logger logger = LoggerFactory.getLogger(BlobOperations.class);
+	private static final Logger logger = Logger.getLogger(BlobOperations.class);
 	@SuppressWarnings("finally")
 	public String add(String filename) throws IOException
 	{
 		String success="True";
+	
 		@SuppressWarnings("resource")
 		ClassPathXmlApplicationContext contextval = new ClassPathXmlApplicationContext("spring.xml");
 		Blobparameters blobparameter = (Blobparameters)contextval.getBean("blobparameters");

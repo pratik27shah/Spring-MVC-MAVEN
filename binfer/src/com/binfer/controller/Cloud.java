@@ -3,8 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,7 +16,7 @@ import org.springframework.ui.ModelMap;
 
 public class Cloud {
 
-	private static final Logger logger = LoggerFactory.getLogger(Cloud.class);
+	private static final Logger logger = Logger.getLogger(Cloud.class);
 	@RequestMapping(value="/",method = {RequestMethod.GET})
 	public ModelAndView  displayCloudList(ModelMap model) throws IOException {
 		List<String> filelist=new ArrayList<String>();
@@ -35,7 +34,7 @@ public class Cloud {
 			ModelMap model,HttpServletRequest request) throws IOException{
 
 
-		String urlparameters;	String url;
+		String url;
 		BlobOperations bloboperations=new BlobOperations();
 		if(operation!=null){
 
